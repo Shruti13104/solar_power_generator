@@ -20,17 +20,17 @@ st.title("Power Generation Prediction System")
 st.write("Enter the input values")
 
 # Inputs
-AT = st.number_input("Temperature (AT)")
-V = st.number_input("Exhaust Vacuum (V)")
-AP = st.number_input("Ambient Pressure (AP)")
-RH = st.number_input("Relative Humidity (RH)")
+at = st.number_input("Temperature (AT)")
+v = st.number_input("Exhaust Vacuum (V)")
+ap = st.number_input("Ambient Pressure (AP)")
+rh = st.number_input("Relative Humidity (RH)")
 
 # Create dataframe with SAME column names used in training
 input_data = pd.DataFrame({
-    "AT":[AT],
-    "V":[V],
-    "AP":[AP],
-    "RH":[RH]
+    "AT":[at],
+    "V":[v],
+    "AP":[ap],
+    "RH":[rh]
 })
 
 # Prediction
