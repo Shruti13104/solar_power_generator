@@ -20,6 +20,17 @@ st.title("Power Generation Prediction System")
 st.write("Enter the input values")
 
 # Inputs
+dof = st.number_input("Day of year")
+yr = st.number_input("year")
+mn = st.number_input("month")
+dy = st.number_input("day")
+fhp = st.number_input("first hour of period")
+id = st.number_input("is day light")
+dtsn = st.number_input("distance to solar noon")
+avt = st.number_input("average temperature")
+awd = st.number_input("average wind direction")
+aws = st.number_input("average wind speed")
+sc = st.number_input("sky cover")
 at = st.number_input("Temperature (AT)")
 v = st.number_input("Exhaust Vacuum (V)")
 ap = st.number_input("Ambient Pressure (AP)")
@@ -27,10 +38,21 @@ rh = st.number_input("Relative Humidity (RH)")
 
 # Create dataframe with SAME column names used in training
 input_data = pd.DataFrame({
-    "AT":[at],
-    "V":[v],
-    "AP":[ap],
-    "RH":[rh]
+    "Day of Year": [dof],
+    "Year": [yr],
+    "Month": [mn],
+    "Day": [dy],
+    "First Hour of Period": [fhp],
+    "Is Daylight": [id],
+    "Distance to Solar Noon": [dtsn],
+    "Average Temperature (Day)": [avt],
+    "Average Wind Direction (Day)": [awd],
+    "Average Wind Speed (Day)": [aws],
+    "Sky Cover": [sc],
+    "Visibility": [v],
+    "Relative Humidity": [rh],
+    "Average Wind Speed (Period)": [aws],
+    "Average Barometric Pressure (Period)": [ap]
 })
 
 # Prediction
